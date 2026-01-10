@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Github, Linkedin } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
@@ -69,6 +69,24 @@ const Navbar = () => {
               <Link to="/contact" className="btn-primary text-sm ml-4">
                 Hire Me
               </Link>
+              <div className="flex items-center gap-3 ml-4">
+                <a
+                  href="https://github.com/praveen-kumar-007"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full bg-muted/50 hover:bg-primary/20 hover:text-primary transition-all"
+                >
+                  <Github className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://linkedin.com/in/praveen-kumar-307697221"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full bg-muted/50 hover:bg-primary/20 hover:text-primary transition-all"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -131,6 +149,26 @@ const Navbar = () => {
                     Hire Me
                   </Link>
                 </motion.div>
+                <div className="flex justify-center gap-4 pt-6">
+                  <a
+                    href="https://github.com/praveen-kumar-007"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-muted/50 hover:bg-primary/20 hover:text-primary transition-all"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Github className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/praveen-kumar-307697221"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-muted/50 hover:bg-primary/20 hover:text-primary transition-all"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>

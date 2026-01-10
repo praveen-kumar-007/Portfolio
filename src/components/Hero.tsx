@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, ChevronDown, Sparkles, ArrowRight } from "lucide-react";
+import { useRef } from "react";
+import { Github, Linkedin, Mail, ChevronDown, Sparkles, ArrowRight, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import AnimatedCounter from "./AnimatedCounter";
 
@@ -43,9 +44,7 @@ const Hero = () => {
             <div className="w-44 h-44 rounded-full p-1 glow-lg relative">
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-neon-purple animate-spin-slow opacity-50" style={{ animationDuration: "8s" }} />
               <div className="relative w-full h-full rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center backdrop-blur-sm border border-primary/20">
-                <span className="text-6xl font-display font-bold text-gradient">
-                  PK
-                </span>
+                <img src="https://res.cloudinary.com/dmmll82la/image/upload/v1765632491/sp-club/passports/passport-1765632490936-299511838.jpg" alt="Praveen Kumar" className="rounded-full w-full h-full object-cover" />
               </div>
             </div>
           </motion.div>
@@ -56,17 +55,19 @@ const Hero = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h1 className="text-5xl md:text-8xl font-display font-bold mb-6 tracking-wider">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 tracking-wider md:whitespace-nowrap">
               <span className="text-gradient">PRAVEEN</span>{" "}
               <span className="text-foreground">KUMAR</span>
             </h1>
-            <div className="flex flex-wrap items-center justify-center gap-3 mb-4">
-              <span className="px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary font-medium">
-                Machine Learning
+            <div className="flex flex-wrap items-center justify-center gap-2 mb-4 text-sm">
+              <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary font-medium">
+                IIT (ISM) Dhanbad
               </span>
-              <span className="text-muted-foreground">•</span>
-              <span className="px-4 py-2 rounded-full bg-secondary/10 border border-secondary/30 text-secondary font-medium">
-                Full Stack Development
+              <span className="px-3 py-1 rounded-full bg-secondary/10 border border-secondary/30 text-secondary font-medium">
+                IIT BHU
+              </span>
+              <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary font-medium">
+                Media In-Charge — DDKA
               </span>
             </div>
             <p className="text-muted-foreground flex items-center justify-center gap-2">
@@ -81,8 +82,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="max-w-2xl text-muted-foreground mt-6 leading-relaxed text-lg"
           >
-            Transforming ideas into intelligent solutions. Research experience at IIT BHU, 
-            passionate about building AI-powered applications that make a difference.
+            Transforming ideas into intelligent solutions — research at IIT (ISM) Dhanbad and IIT BHU. Media In-Charge for DDKA and passionate about building AI-powered applications.
           </motion.p>
 
           {/* Stats */}
@@ -102,24 +102,27 @@ const Hero = () => {
             ))}
           </motion.div>
 
-          {/* CTA Buttons */}
+          {/* CTA + Scrollable Project Buttons */}
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-wrap gap-4 mt-10 justify-center"
+            className="flex flex-col sm:flex-row sm:items-center gap-4 mt-10 justify-center"
           >
-            <Link to="/contact" className="btn-primary flex items-center gap-2">
-              <Mail className="w-4 h-4" />
-              Get in Touch
-            </Link>
-            <Link
-              to="/projects"
-              className="btn-outline flex items-center gap-2"
-            >
-              View Projects
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3 items-center">
+              <Link to="/contact" className="btn-primary flex items-center gap-2">
+                <Mail className="w-4 h-4" />
+                Get in Touch
+              </Link>
+              <Link to="/projects" className="btn-outline flex items-center gap-2">
+                View Projects
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <ScrollableProjects />
+            </div>
           </motion.div>
 
           {/* Social Links */}
@@ -174,3 +177,55 @@ const Hero = () => {
 };
 
 export default Hero;
+
+// ScrollableProjects component placed after export to keep file organized
+function ScrollableProjects() {
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const scrollBy = (offset: number) => {
+    if (!scrollRef.current) return;
+    scrollRef.current.scrollBy({ left: offset, behavior: "smooth" });
+  };
+
+  const buttons = [
+    { label: "SP Kabaddi (Live)", href: "/projects#sp-kabaddi", liveExternal: "https://spkabaddi.me" },
+    { label: "DDKA (Live)", href: "/projects#dhanbad-district-kabaddi-association", liveExternal: "https://dhanbadkabaddiassociation.tech/" },
+    { label: "Methane Detection", href: "/projects#methane-detection" },
+  ];
+
+  return (
+    <div className="relative w-full max-w-3xl">
+      <button
+        onClick={() => scrollBy(-220)}
+        aria-label="Scroll left"
+        className="hidden sm:inline-flex items-center justify-center p-2 bg-muted/20 rounded-full hover:bg-muted/30 transition"
+      >
+        <ChevronLeft className="w-5 h-5 text-foreground" />
+      </button>
+
+      <div
+        ref={scrollRef}
+        className="flex gap-3 overflow-x-auto no-scrollbar px-2 py-1 mx-2"
+        style={{ scrollBehavior: "smooth" }}
+      >
+        {buttons.map((b) => (
+          <Link
+            key={b.label}
+            to={b.href}
+            className="btn-outline whitespace-nowrap px-4 py-2 inline-flex items-center gap-2"
+          >
+            <ExternalLink className="w-4 h-4" />
+            {b.label}
+          </Link>
+        ))}
+      </div>
+
+      <button
+        onClick={() => scrollBy(220)}
+        aria-label="Scroll right"
+        className="hidden sm:inline-flex items-center justify-center p-2 bg-muted/20 rounded-full hover:bg-muted/30 transition"
+      >
+        <ChevronRight className="w-5 h-5 text-foreground" />
+      </button>
+    </div>
+  );
+}

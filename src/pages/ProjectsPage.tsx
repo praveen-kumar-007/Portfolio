@@ -5,7 +5,35 @@ import GlowCard from "@/components/GlowCard";
 import { Link } from "react-router-dom";
 import { ExternalLink, Github, Brain, Server, Lock, Zap, ChevronRight, Code2, Layers } from "lucide-react";
 
+const slugify = (s: string) =>
+  s
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+
 const projects = [
+  {
+    title: "Methane Detection in Coal Mining",
+    slug: "methane-detection",
+    subtitle: "Gas Detection & Early Warning System",
+    description: "A time-series and CNN-LSTM based system to detect methane presence in coal mine environments and provide early warnings.",
+    longDescription: "Developed during an internship at IIT (ISM) Dhanbad under the supervision of Dr. Rajendra Pamula. The project explores sensor data preprocessing and multiple sequence models (LSTM, GRU, Bi-LSTM, CNN-LSTM) to detect methane anomalies and trigger warnings for mine safety.",
+    features: [
+      "Sensor data preprocessing and noise filtering",
+      "Time-series modeling with LSTM/GRU/Bi-LSTM",
+      "CNN-LSTM for combined spatial-temporal feature extraction",
+      "Model comparison and evaluation (precision/recall, F1, ROC)",
+      "Prototype early-warning pipeline and deployment considerations",
+    ],
+    tags: ["LSTM", "GRU", "Bi-LSTM", "CNN-LSTM", "Python", "TensorFlow", "Keras", "Pandas"],
+    icon: Brain,
+    category: "ML/AI",
+    color: "from-primary to-neon-blue",
+    featured: true,
+    github: "https://github.com/praveen-kumar-007",
+  },
   {
     title: "Brain Tumor Detection Model",
     subtitle: "Medical AI Application",
@@ -26,24 +54,47 @@ const projects = [
     github: "https://github.com/praveen-kumar-007",
   },
   {
-    title: "HireMe - Job Portal",
-    subtitle: "Full Stack Web Application",
-    description: "A comprehensive job portal built as part of 100-hour Full Stack Development training with IBM. Features both front-end and back-end components for complete job marketplace functionality.",
-    longDescription: "This full-stack application serves as a complete job marketplace where employers can post jobs and candidates can apply. Built with modern web technologies, it demonstrates end-to-end application development skills.",
+    title: "SP Kabaddi - Club Website",
+    slug: "sp-kabaddi",
+    subtitle: "Official site for SP Kabaddi Group (spkabaddi.me)",
+    description: "A fully functional sports club website for SP Kabaddi Group, featuring news, admin dashboard, player registration, and an attractive UI. SP Kabaddi is registered with DDKA.",
+    longDescription: "Built as a production site for SP Kabaddi Group Dhanbad and deployed at spkabaddi.me. The site includes news management, player registration, an admin dashboard for content and user management, responsive UI, and an in-built player ID card generation feature. SP Kabaddi is registered with DDKA.",
     features: [
-      "User authentication and authorization",
-      "Job posting and management for employers",
-      "Job search and application for candidates",
-      "Resume upload and management",
-      "Real-time notifications",
-      "Responsive design for all devices",
+      "News management and media gallery",
+      "Admin dashboard with role-based access",
+      "Player registration and profile management",
+      "Responsive, polished UI built with React + JSS",
+      "In-built player ID card generation",
+      "Cloudinary integration for image handling",
     ],
-    tags: ["React", "Node.js", "MongoDB", "Express", "REST API", "JWT"],
+    tags: ["React", "JSS", "Vite", "Node.js", "MongoDB", "Cloudinary"],
     icon: Server,
-    category: "Full Stack",
+    category: "Web",
     color: "from-secondary to-neon-pink",
     featured: true,
     github: "https://github.com/praveen-kumar-007",
+    live: "https://spkabaddi.me",
+  },
+  {
+    title: "Dhanbad District Kabaddi Association",
+    slug: "dhanbad-district-kabaddi-association",
+    subtitle: "DDKA Official Website (dhanbaddistrictkabaddi.tech)",
+    description: "Official governing body website for Kabaddi in Dhanbad with admin & super-admin panels, player and institute registration, gallery, news, and ID card generation.",
+    longDescription: "Developed while serving as Media In-Charge for the Dhanbad District Kabaddi Association (DDKA). The platform (dhanbaddistrictkabaddi.tech) is the official governing body site for kabaddi in Dhanbad — super-admins can manage admins, and admins can manage galleries, news, player registrations, institute registrations, and technical referee registrations. The system includes an in-built player ID card generation feature.",
+    features: [
+      "Super-admin and admin role management",
+      "Gallery and news publishing",
+      "Player and institute registration workflows",
+      "Admin panel with full website management capabilities",
+      "Production deployment with CDN-backed media",
+    ],
+    tags: ["React", "JSS", "Vite", "Node.js", "MongoDB", "Cloudinary"],
+    icon: Code2,
+    category: "Web",
+    color: "from-neon-blue to-primary",
+    featured: true,
+    github: "https://github.com/praveen-kumar-007",
+    live: "https://dhanbadkabaddiassociation.tech/",
   },
   {
     title: "Energy Consumption Prediction",
@@ -123,7 +174,10 @@ const ProjectsPage = () => {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
               >
-                <div className="relative group">
+                <div
+                  id={project.slug ?? slugify(project.title)}
+                  className="relative group"
+                >
                   {/* Glow effect */}
                   <div className={`absolute -inset-0.5 bg-gradient-to-r ${project.color} rounded-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 blur-sm`} />
                   
@@ -184,15 +238,28 @@ const ProjectsPage = () => {
                         </div>
 
                         {/* Links */}
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn-outline inline-flex items-center gap-2"
-                        >
-                          <Github className="w-4 h-4" />
-                          View on GitHub
-                        </a>
+                        <div className="flex items-center gap-3">
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-outline inline-flex items-center gap-2"
+                          >
+                            <Github className="w-4 h-4" />
+                            View on GitHub
+                          </a>
+                          {project.live && (
+                            <a
+                              href={project.live}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn-primary inline-flex items-center gap-2"
+                            >
+                              <ExternalLink className="w-4 h-4" />
+                              Live Site
+                            </a>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -222,7 +289,7 @@ const ProjectsPage = () => {
 
           <div className="grid md:grid-cols-2 gap-6">
             {otherProjects.map((project, index) => (
-              <GlowCard key={project.title} delay={index * 0.15}>
+              <GlowCard key={project.title} delay={index * 0.15} id={project.slug}>
                 <div className="flex items-start gap-4 mb-4">
                   <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.color} p-0.5 shrink-0`}>
                     <div className="w-full h-full rounded-xl bg-card flex items-center justify-center">
@@ -264,15 +331,28 @@ const ProjectsPage = () => {
                   ))}
                 </div>
 
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1"
-                >
-                  <Github className="w-4 h-4" />
-                  View Code
-                </a>
+                <div className="flex items-center gap-4">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1"
+                  >
+                    <Github className="w-4 h-4" />
+                    View Code
+                  </a>
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-foreground hover:text-primary/80 transition-colors inline-flex items-center gap-1"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Live Site
+                    </a>
+                  )}
+                </div>
               </GlowCard>
             ))}
           </div>

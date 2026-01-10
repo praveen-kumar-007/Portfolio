@@ -3,88 +3,9 @@ import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import GlowCard from "@/components/GlowCard";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import { Code2, Brain, Database, Cloud, GraduationCap, Target, Lightbulb, Users, BookOpen, Heart } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const highlights = [
-  {
-    icon: Brain,
-    title: "Machine Learning",
-    description: "Deep expertise in CNN, neural networks, TensorFlow, and Keras for building intelligent systems",
-    color: "from-primary to-neon-blue",
-  },
-  {
-    icon: Code2,
-    title: "Full Stack Development",
-    description: "End-to-end application development with React, Node.js, and modern web technologies",
-    color: "from-secondary to-neon-pink",
-  },
-  {
-    icon: Database,
-    title: "Data Science",
-    description: "Data analysis, visualization, and insights extraction using Pandas, NumPy, and SQL",
-    color: "from-neon-purple to-secondary",
-  },
-  {
-    icon: Cloud,
-    title: "Cloud Computing",
-    description: "Google Cloud certified with experience in deployment, APIs, and scalable solutions",
-    color: "from-neon-blue to-primary",
-  },
-];
-
-const values = [
-  {
-    icon: Target,
-    title: "Problem Solver",
-    description: "I thrive on tackling complex challenges and finding elegant solutions through analytical thinking.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Continuous Learner",
-    description: "Always exploring new technologies, frameworks, and methodologies to stay at the cutting edge.",
-  },
-  {
-    icon: Users,
-    title: "Team Player",
-    description: "Excellent collaboration skills developed through multiple internships and team projects.",
-  },
-];
-
-const education = [
-  {
-    degree: "Bachelor of Technology",
-    field: "Computer Science & Engineering",
-    institution: "Swami Vivekananda University",
-    location: "Kolkata, West Bengal",
-    period: "2022 - 2026",
-    grade: "8.45 CGPA",
-    current: true,
-  },
-  {
-    degree: "Intermediate (12th)",
-    field: "Science",
-    institution: "JLSM DAV College Bhaga",
-    location: "Dhanbad",
-    period: "2022",
-    grade: "79%",
-    current: false,
-  },
-  {
-    degree: "Matriculation (10th)",
-    field: "",
-    institution: "Rajkamal Saraswati Vidya Mandir",
-    location: "Dhanbad",
-    period: "2020",
-    grade: "78%",
-    current: false,
-  },
-];
-
-const hobbies = [
-  { icon: BookOpen, name: "Writing Hindi Poems", description: "Creative expression through traditional poetry" },
-  { icon: Heart, name: "Playing Kabaddi", description: "Staying active with this traditional Indian sport" },
-];
+import { highlights, values, education, hobbies } from "@/lib/data";
 
 const AboutPage = () => {
   return (

@@ -3,11 +3,11 @@ import { useState } from "react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import GlowCard from "@/components/GlowCard";
-import { Mail, Phone, MapPin, Send, Linkedin, Github, MessageSquare, Clock, Globe } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { Send, MessageSquare, Clock, Globe, Phone, Mail } from "lucide-react";
+import { toast } from "@/components/ui/sonner";
+import { quickContactInfo, whatImLookingFor, availability, socialLinks } from "@/lib/data";
 
 const ContactPage = () => {
-  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,8 +26,7 @@ const ContactPage = () => {
     
     setTimeout(() => {
       setIsSubmitting(false);
-      toast({
-        title: "Email client opened!",
+      toast("Email client opened!", {
         description: "Please send the email from your email client.",
       });
     }, 1000);
@@ -45,11 +44,7 @@ const ContactPage = () => {
       <section className="py-12">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            {[
-              { icon: Mail, label: "Email", value: "praveen.pr105@gmail.com", href: "mailto:praveen.pr105@gmail.com" },
-              { icon: Phone, label: "Phone", value: "+91 9504904499", href: "tel:+919504904499" },
-              { icon: MapPin, label: "Location", value: "Dhanbad, India", href: null },
-            ].map((item, index) => (
+            {quickContactInfo.map((item, index) => (
               <motion.div
                 key={item.label}
                 initial={{ opacity: 0, y: 20 }}
@@ -112,13 +107,7 @@ const ContactPage = () => {
                   What I'm Looking For
                 </h3>
                 <ul className="space-y-3">
-                  {[
-                    "Full-time ML/AI Engineer positions",
-                    "Full Stack Development opportunities",
-                    "Research collaborations in AI/ML",
-                    "Freelance projects",
-                    "Open source collaborations",
-                  ].map((item, i) => (
+                  {whatImLookingFor.map((item, i) => (
                     <li key={i} className="flex items-center gap-2 text-muted-foreground">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                       {item}
@@ -135,13 +124,13 @@ const ContactPage = () => {
                 </h3>
                 <div className="space-y-2 text-muted-foreground">
                   <p>
-                    <span className="text-primary font-medium">Current Status:</span> Open to opportunities
+                    <span className="text-primary font-medium">Current Status:</span> {availability.status}
                   </p>
                   <p>
-                    <span className="text-primary font-medium">Response Time:</span> Usually within 24-48 hours
+                    <span className="text-primary font-medium">Response Time:</span> {availability.responseTime}
                   </p>
                   <p>
-                    <span className="text-primary font-medium">Timezone:</span> IST (UTC+5:30)
+                    <span className="text-primary font-medium">Timezone:</span> {availability.timezone}
                   </p>
                 </div>
               </GlowCard>
@@ -153,24 +142,18 @@ const ContactPage = () => {
                   Connect With Me
                 </h3>
                 <div className="flex gap-4">
-                  <a
-                    href="https://linkedin.com/in/praveen-kumar-307697221"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-3 rounded-xl bg-[#0077B5]/10 border border-[#0077B5]/30 text-[#0077B5] hover:bg-[#0077B5]/20 transition-colors"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                    LinkedIn
-                  </a>
-                  <a
-                    href="https://github.com/praveen-kumar-007"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-3 rounded-xl bg-foreground/5 border border-foreground/20 text-foreground hover:bg-foreground/10 transition-colors"
-                  >
-                    <Github className="w-5 h-5" />
-                    GitHub
-                  </a>
+                  {socialLinks.map((link) => (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center gap-2 px-4 py-3 rounded-xl ${link.bgColor} ${link.borderColor} ${link.textColor} ${link.hoverBgColor} transition-colors`}
+                    >
+                      <link.icon className="w-5 h-5" />
+                      {link.name}
+                    </a>
+                  ))}
                 </div>
               </div>
             </motion.div>

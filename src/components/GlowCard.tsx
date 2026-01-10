@@ -6,11 +6,13 @@ interface GlowCardProps {
   className?: string;
   delay?: number;
   hoverEffect?: boolean;
+  id?: string;
 }
 
-const GlowCard = ({ children, className = "", delay = 0, hoverEffect = true }: GlowCardProps) => {
+const GlowCard = ({ children, className = "", delay = 0, hoverEffect = true, id }: GlowCardProps) => {
   return (
     <motion.div
+      id={id}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
