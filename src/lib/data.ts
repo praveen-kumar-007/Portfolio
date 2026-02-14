@@ -127,9 +127,9 @@ export const experiences = [
     company: "IIT (ISM) Dhanbad",
     location: "Dhanbad, India",
     period: "2025",
-    duration: "Ongoing",
+    duration: "Completed",
     type: "Research",
-    description: "Working on methane gas detection in coal mining environments using sequence models and hybrid CNN-LSTM architectures to provide early warning signals.",
+    description: "Worked on methane gas detection in coal mining environments using sequence models and hybrid CNN-LSTM architectures to provide early warning signals.",
     achievements: [
       "Designed and compared LSTM, GRU, Bidirectional LSTM, and CNN-LSTM models for methane detection",
       "Implemented sensor preprocessing pipelines and handled noisy time-series data",

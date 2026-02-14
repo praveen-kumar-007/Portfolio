@@ -20,8 +20,8 @@ const GlowCard = ({ children, className = "", delay = 0, hoverEffect = true, id 
       whileHover={hoverEffect ? { y: -5, scale: 1.02 } : {}}
       className={`relative group ${className}`}
     >
-      {/* Glow effect */}
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/50 to-secondary/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
+      {/* Subtle hover accent */}
+      <div className="absolute -inset-0.5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-r from-slate-800/5 to-slate-700/5" />
       
       {/* Card content */}
       <div className="relative card-glass h-full">

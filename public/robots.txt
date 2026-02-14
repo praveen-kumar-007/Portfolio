@@ -1,3 +1,7 @@
+# robots.txt for Praveen Kumar Portfolio
+# Replace the `Sitemap:` URL with your production domain before submitting to search engines
+Sitemap: https://your-domain.com/sitemap.xml
+
 User-agent: Googlebot
 Allow: /
 

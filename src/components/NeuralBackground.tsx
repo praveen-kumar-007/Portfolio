@@ -18,29 +18,42 @@ const NeuralBackground = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    let bgGradient: CanvasGradient | null = null;
+
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+
+      // update background gradient on resize
+      bgGradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      bgGradient.addColorStop(0, "#071427");
+      bgGradient.addColorStop(1, "#012238");
     };
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
     const particles: Particle[] = [];
-    const particleCount = 80;
-    const connectionDistance = 150;
+    const particleCount = 65;
+    const connectionDistance = 140;
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        radius: Math.random() * 2 + 1,
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6,
+        radius: Math.random() * 1.8 + 0.8,
       });
     }
 
     const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // draw subtle blue gradient background
+      if (bgGradient) {
+        ctx.fillStyle = bgGradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      } else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
 
       // Update and draw particles
       particles.forEach((particle, i) => {
@@ -53,7 +66,7 @@ const NeuralBackground = () => {
         // Draw particle
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(0, 212, 255, 0.6)";
+        ctx.fillStyle = "rgba(99,150,255,0.75)";
         ctx.fill();
 
         // Draw connections
@@ -66,9 +79,9 @@ const NeuralBackground = () => {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            const opacity = (1 - distance / connectionDistance) * 0.3;
-            ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
-            ctx.lineWidth = 0.5;
+            const opacity = (1 - distance / connectionDistance) * 0.25;
+            ctx.strokeStyle = `rgba(99,150,255, ${opacity})`;
+            ctx.lineWidth = 0.6;
             ctx.stroke();
           }
         }

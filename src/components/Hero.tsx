@@ -14,10 +14,10 @@ const stats = [
 const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden neural-grid">
-      {/* Enhanced Gradient Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[150px] animate-pulse-glow" />
-      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[120px] animate-pulse-glow delay-1000" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-neon-purple/10 rounded-full blur-[100px]" />
+      {/* Subtle professional gradient orbs */}
+      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-gradient-to-tr from-sky-800/20 to-indigo-900/10 rounded-full blur-[150px]" />
+      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-gradient-to-bl from-slate-800/12 to-sky-900/10 rounded-full blur-[120px]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-br from-sky-700/8 to-indigo-900/6 rounded-full blur-[100px]" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center text-center">
@@ -41,9 +41,9 @@ const Hero = () => {
             transition={{ duration: 0.6, type: "spring" }}
             className="relative mb-8"
           >
-            <div className="w-44 h-44 rounded-full p-1 glow-lg relative">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-neon-purple animate-spin-slow opacity-50" style={{ animationDuration: "8s" }} />
-              <div className="relative w-full h-full rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center backdrop-blur-sm border border-primary/20">
+            <div className="w-44 h-44 rounded-full p-1 ring ring-slate-800/20 relative">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-sky-700/20 via-indigo-700/10 to-slate-800/8 opacity-30" />
+              <div className="relative w-full h-full rounded-full bg-gradient-to-br from-slate-800/8 to-slate-900/6 flex items-center justify-center backdrop-blur-sm border border-slate-700/20">
                 <img src="https://res.cloudinary.com/dmmll82la/image/upload/v1765632491/sp-club/passports/passport-1765632490936-299511838.jpg" alt="Praveen Kumar" className="rounded-full w-full h-full object-cover" />
               </div>
             </div>

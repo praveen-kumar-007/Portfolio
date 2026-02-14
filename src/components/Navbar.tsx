@@ -40,8 +40,13 @@ const Navbar = () => {
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="font-display font-bold text-2xl group">
-              <span className="text-gradient group-hover:opacity-80 transition-opacity">PK</span>
+            <Link to="/" className="font-display font-bold text-2xl group inline-flex items-center gap-3">
+              <img
+                src="https://res.cloudinary.com/dmmll82la/image/upload/v1765632491/sp-club/passports/passport-1765632490936-299511838.jpg"
+                alt="Praveen Kumar"
+                className="w-9 h-9 rounded-full object-cover ring-1 ring-slate-700/20"
+              />
+              <span className="sr-only">Home</span>
             </Link>
 
             {/* Desktop Navigation */}
