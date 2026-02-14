@@ -71,7 +71,7 @@ const SkillsPage = () => {
 
       {/* Skills Grid */}
       <section className="py-20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="space-y-16">
             {skillCategories.map((category, categoryIndex) => (
               <motion.div
@@ -141,7 +141,7 @@ const SkillsPage = () => {
 
       {/* Skill Highlights */}
       <section className="py-20 neural-grid">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -188,7 +188,7 @@ const SkillsPage = () => {
 
       {/* CTA */}
       <section className="py-20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <GlowCard className="max-w-3xl mx-auto" hoverEffect={false}>
             <div className="text-center py-8">
               <h2 className="text-3xl font-display font-bold text-foreground mb-4">

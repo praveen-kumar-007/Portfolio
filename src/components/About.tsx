@@ -32,7 +32,7 @@ const About = () => {
 
   return (
     <section id="about" className="py-24 relative">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}

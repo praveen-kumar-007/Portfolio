@@ -150,7 +150,7 @@ const ProjectsPage = () => {
 
       {/* Featured Projects */}
       <section className="py-20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -178,8 +178,8 @@ const ProjectsPage = () => {
                   id={project.slug ?? slugify(project.title)}
                   className="relative group"
                 >
-                  {/* Glow effect */}
-                  <div className={`absolute -inset-0.5 bg-gradient-to-r ${project.color} rounded-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 blur-sm`} />
+                  {/* Glow effect (also for focus/touch) */}
+                  <div className={`absolute -inset-0.5 bg-gradient-to-r ${project.color} rounded-2xl opacity-0 group-hover:opacity-50 group-focus-within:opacity-50 transition-opacity duration-500 blur-sm`} />
                   
                   <div className="relative card-glass overflow-hidden">
                     <div className="grid lg:grid-cols-5 gap-8">
@@ -272,7 +272,7 @@ const ProjectsPage = () => {
 
       {/* Other Projects */}
       <section className="py-20 neural-grid">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -361,7 +361,7 @@ const ProjectsPage = () => {
 
       {/* GitHub CTA */}
       <section className="py-20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <GlowCard className="max-w-3xl mx-auto" hoverEffect={false}>
             <div className="text-center py-8">
               <div className="w-16 h-16 rounded-full bg-foreground/10 flex items-center justify-center mx-auto mb-6">

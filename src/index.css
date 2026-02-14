@@ -117,13 +117,16 @@
     background-image: 
       linear-gradient(hsl(var(--primary) / 0.03) 1px, transparent 1px),
       linear-gradient(90deg, hsl(var(--primary) / 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
+    background-size: 30px 30px;
+  }
+  @screen sm {
+    .neural-grid { background-size: 50px 50px; }
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply px-6 py-3 font-semibold rounded-lg transition-all duration-300;
+    @apply px-4 sm:px-6 py-3 font-semibold rounded-lg transition-all duration-300;
     background: var(--gradient-primary);
     color: hsl(var(--background));
     box-shadow: var(--shadow-glow);
@@ -135,7 +138,7 @@
   }
 
   .btn-outline {
-    @apply px-6 py-3 font-semibold rounded-lg transition-all duration-300 border-2;
+    @apply px-4 sm:px-6 py-3 font-semibold rounded-lg transition-all duration-300 border-2;
     border-color: hsl(var(--primary));
     color: hsl(var(--primary));
     background: transparent;
@@ -147,7 +150,7 @@
   }
 
   .card-glass {
-    @apply rounded-xl p-6 backdrop-blur-xl transition-all duration-300;
+    @apply rounded-xl p-4 sm:p-6 backdrop-blur-xl transition-all duration-300;
     background: var(--gradient-card);
     border: 1px solid hsl(var(--border) / 0.5);
   }
@@ -158,7 +161,7 @@
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl font-bold mb-4 tracking-wider;
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold mb-4 tracking-wider;
   }
 
   .skill-bar {

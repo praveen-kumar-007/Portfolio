@@ -18,7 +18,7 @@ const AboutPage = () => {
 
       {/* Main About Section */}
       <section className="py-20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left: Introduction */}
             <motion.div
@@ -125,7 +125,7 @@ const AboutPage = () => {
 
       {/* Core Competencies */}
       <section className="py-20 neural-grid">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -158,7 +158,7 @@ const AboutPage = () => {
 
       {/* Education Timeline */}
       <section className="py-20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -209,7 +209,7 @@ const AboutPage = () => {
 
       {/* Values */}
       <section className="py-20 neural-grid">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -242,7 +242,7 @@ const AboutPage = () => {
 
       {/* Hobbies */}
       <section className="py-20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -273,7 +273,7 @@ const AboutPage = () => {
 
       {/* CTA */}
       <section className="py-20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <GlowCard className="max-w-3xl mx-auto" hoverEffect={false}>
             <div className="text-center py-8">
               <h2 className="text-3xl font-display font-bold text-foreground mb-4">

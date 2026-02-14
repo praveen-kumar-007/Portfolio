@@ -42,7 +42,7 @@ const ContactPage = () => {
 
       {/* Quick Contact Info */}
       <section className="py-12">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
             {quickContactInfo.map((item, index) => (
               <motion.div
@@ -79,7 +79,7 @@ const ContactPage = () => {
 
       {/* Main Contact Section */}
       <section className="py-20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Left: Contact Info & Social */}
             <motion.div
@@ -257,7 +257,7 @@ const ContactPage = () => {
 
       {/* Map or Final CTA */}
       <section className="py-20 neural-grid">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

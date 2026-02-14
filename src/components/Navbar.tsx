@@ -37,14 +37,14 @@ const Navbar = () => {
           isScrolled ? "bg-glass py-3" : "py-6"
         }`}
       >
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="font-display font-bold text-2xl group inline-flex items-center gap-3">
               <img
                 src="https://res.cloudinary.com/dmmll82la/image/upload/v1765632491/sp-club/passports/passport-1765632490936-299511838.jpg"
                 alt="Praveen Kumar"
-                className="w-9 h-9 rounded-full object-cover ring-1 ring-slate-700/20"
+                className="w-7 h-7 sm:w-9 sm:h-9 rounded-full object-cover ring-1 ring-slate-700/20"
               />
               <span className="sr-only">Home</span>
             </Link>
@@ -119,7 +119,7 @@ const Navbar = () => {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 bg-background/98 backdrop-blur-xl md:hidden pt-24"
           >
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-4 sm:px-6">
               <div className="flex flex-col gap-2">
                 {navLinks.map((link, index) => (
                   <motion.div
