@@ -52,7 +52,7 @@ export const education = [
     institution: "Swami Vivekananda University",
     location: "Kolkata, West Bengal",
     period: "2022 - 2026",
-    grade: "8.45 CGPA",
+    grade: "8.5 CGPA",
     current: true,
   },
   {
@@ -123,10 +123,27 @@ export const socialLinks = [
 
 export const experiences = [
   {
-    title: "Research Intern",
+    title: "Full Stack Developer (Freelance)",
+    company: "Multimarg Private Limited",
+    location: "Remote",
+    period: "Jun 2026 - Aug 2026",
+    duration: "Completed",
+    type: "Freelance",
+    description: "Architected and developed a comprehensive full-stack logistics platform, designing robust RESTful APIs to handle complex booking, billing, and carrier coordination workflows.",
+    achievements: [
+      "Engineered a secure Role-Based Access Control (RBAC) architecture using JWT authentication",
+      "Enforced strict data isolation and governance across admin, finance, and logistics modules",
+      "Optimized application performance and database schemas",
+      "Ensured scalable and seamless data flow for enterprise operations",
+    ],
+    skills: ["React", "Node.js", "Express.js", "MongoDB", "REST APIs", "JWT"],
+    featured: true,
+  },
+  {
+    title: "AI/ML Intern",
     company: "IIT (ISM) Dhanbad",
     location: "Dhanbad, India",
-    period: "2025",
+    period: "Dec 2025 - Jan 2026",
     duration: "Completed",
     type: "Research",
     description: "Worked on methane gas detection in coal mining environments using sequence models and hybrid CNN-LSTM architectures to provide early warning signals.",
@@ -140,10 +157,10 @@ export const experiences = [
     featured: true,
   },
   {
-    title: "AI/ML Research Intern",
+    title: "AI/ML Intern",
     company: "Banaras Hindu University (IIT BHU)",
     location: "Varanasi, India",
-    period: "2025",
+    period: "Jun - Jul 2025",
     duration: "6 Weeks",
     type: "Research",
     description: "Developed a machine learning model for predicting energy consumption in smart buildings, gaining practical experience in data handling and model development.",
@@ -160,7 +177,7 @@ export const experiences = [
     title: "AI and Data Analytics Intern",
     company: "AICTE, Shell & Edunet Foundation",
     location: "Virtual",
-    period: "2025",
+    period: "Jul - Aug 2025",
     duration: "4 Weeks",
     type: "Virtual",
     description: "Completed the Skills4Future Program focused on AI, Data Analytics, and Green Skills.",
@@ -194,7 +211,7 @@ export const experiences = [
     title: "Machine Learning Intern",
     company: "Encryptix",
     location: "Remote",
-    period: "2024",
+    period: "Aug - Sep 2024",
     duration: "4 Weeks",
     type: "Remote",
     description: "Gained hands-on experience in applying machine learning concepts from development to deployment.",
@@ -247,5 +264,28 @@ export const whatIGained = [
     icon: Award,
     title: "Professional Growth",
     description: "Developed strong analytical, problem-solving, and teamwork skills across multiple projects",
+  },
+];
+
+export const achievements = [
+  {
+    title: "2nd Position",
+    event: "IBM Full Stack Training Final Project Competition (College Level)",
+    year: "2025",
+  },
+  {
+    title: "Winner",
+    event: "Jharkhand State Kabaddi",
+    year: "2024",
+  },
+  {
+    title: "Referee",
+    event: "Dhanbad District Kabaddi",
+    year: "2024",
+  },
+  {
+    title: "Media Incharge",
+    event: "Dhanbad District Kabaddi Association",
+    year: "2024",
   },
 ];

@@ -44,7 +44,7 @@ const Hero = () => {
             <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 rounded-full p-1 ring ring-slate-800/20 relative">
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-sky-700/20 via-indigo-700/10 to-slate-800/8 opacity-30" />
               <div className="relative w-full h-full rounded-full bg-gradient-to-br from-slate-800/8 to-slate-900/6 flex items-center justify-center backdrop-blur-sm border border-slate-700/20">
-                <img src="https://res.cloudinary.com/dmmll82la/image/upload/v1765632491/sp-club/passports/passport-1765632490936-299511838.jpg" alt="Praveen Kumar" className="rounded-full w-full h-full object-cover" />
+                <img src="https://res.cloudinary.com/dmmll82la/image/upload/v1765632491/sp-club/passports/passport-1765632490936-299511838.jpg" alt="Praveen Kumar Machine Learning Full Stack Developer Photo" className="rounded-full w-full h-full object-cover" loading="lazy" />
               </div>
             </div>
           </motion.div>
@@ -107,9 +107,9 @@ const Hero = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row sm:items-center gap-4 mt-10 justify-center"
+            className="flex flex-col sm:flex-row sm:items-center gap-4 mt-10 justify-center w-full max-w-full"
           >
-            <div className="flex flex-col sm:flex-row gap-3 items-center">
+            <div className="flex flex-col sm:flex-row gap-3 items-center flex-wrap w-full max-w-full">
               <Link to="/contact" className="btn-primary flex items-center gap-2">
                 <Mail className="w-4 h-4" />
                 Get in Touch

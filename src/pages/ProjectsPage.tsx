@@ -15,6 +15,27 @@ const slugify = (s: string) =>
 
 const projects = [
   {
+    title: "Multimarg Logistics Platform",
+    slug: "multimarg-logistics",
+    subtitle: "Enterprise B2B Logistics Application",
+    description: "A scalable B2B logistics application focusing on modular component design, responsive UI/UX, and robust backend architecture.",
+    longDescription: "Built as a comprehensive full-stack logistics platform during my freelance work with Multimarg Private Limited. The application handles complex booking, billing, and carrier coordination workflows. It features a secure Identity and Access Management (IAM) system using Role-Based Access Control (RBAC) with JWT authentication to manage granular permissions across varying operational roles (admin, finance, logistics). It also includes dynamic administrative dashboards utilizing advanced state management for efficient data visualization and centralized service tracking.",
+    features: [
+      "Modular component design and responsive UI/UX",
+      "Robust RESTful APIs for complex workflows",
+      "Secure IAM with token-based authentication (JWT)",
+      "Role-Based Access Control (RBAC) for data isolation",
+      "Dynamic administrative dashboards with advanced state management",
+    ],
+    tags: ["React", "Node.js", "Express.js", "MongoDB", "REST APIs", "JWT"],
+    icon: Server,
+    category: "Full Stack",
+    color: "from-secondary to-neon-pink",
+    featured: true,
+    github: "https://github.com/praveen-kumar-007",
+    live: "https://multimarg.vercel.app/",
+  },
+  {
     title: "Methane Detection in Coal Mining",
     slug: "methane-detection",
     subtitle: "Gas Detection & Early Warning System",

@@ -3,9 +3,9 @@ import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import GlowCard from "@/components/GlowCard";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import { GraduationCap } from "lucide-react";
+import { GraduationCap, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
-import { highlights, values, education, hobbies } from "@/lib/data";
+import { highlights, values, education, hobbies, achievements } from "@/lib/data";
 
 const AboutPage = () => {
   return (
@@ -84,7 +84,7 @@ const AboutPage = () => {
                   </div>
                   <div className="text-center p-4 rounded-lg bg-neon-purple/5">
                     <div className="text-4xl font-display font-bold text-gradient">
-                      8.45
+                      8.5
                     </div>
                     <p className="text-sm text-muted-foreground mt-1">Current CGPA</p>
                   </div>
@@ -199,6 +199,46 @@ const AboutPage = () => {
                   <div className="text-right md:text-right ml-16 md:ml-0">
                     <div className="text-2xl font-display font-bold text-gradient">{edu.grade}</div>
                     <div className="text-sm text-muted-foreground">{edu.period}</div>
+                  </div>
+                </div>
+              </GlowCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements Timeline */}
+      <section className="py-20 bg-primary/5">
+        <div className="container mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="text-primary font-medium tracking-widest text-sm uppercase">Milestones</span>
+            <h2 className="section-title text-gradient mt-2">Key Achievements</h2>
+          </motion.div>
+
+          <div className="max-w-3xl mx-auto space-y-6">
+            {achievements.map((achieve, index) => (
+              <GlowCard key={achieve.title + achieve.year} delay={index * 0.15}>
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
+                      <Trophy className="w-6 h-6 text-secondary" />
+                    </div>
+                    <div>
+                      <h3 className="font-display font-semibold text-foreground mb-1">
+                        {achieve.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm">
+                        {achieve.event}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="text-right md:text-right ml-16 md:ml-0">
+                    <div className="text-xl font-display font-bold text-gradient-secondary">{achieve.year}</div>
                   </div>
                 </div>
               </GlowCard>

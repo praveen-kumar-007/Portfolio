@@ -14,10 +14,10 @@ const projects = [
     category: "ML/AI",
   },
   {
-    title: "HireMe - Job Portal",
+    title: "Multimarg Logistics Platform",
     description:
-      "Comprehensive full-stack job portal developed during IBM training. Features complete front-end and back-end components for job seekers and employers.",
-    tags: ["React", "Node.js", "MongoDB", "REST API"],
+      "Scalable B2B logistics application with a secure Role-Based Access Control (RBAC) architecture using JWT authentication and RESTful APIs.",
+    tags: ["React", "Node.js", "Express.js", "MongoDB", "REST API", "JWT"],
     icon: Server,
     featured: true,
     category: "Full Stack",
