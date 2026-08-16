@@ -33,7 +33,7 @@ const projects = [
     color: "from-secondary to-neon-pink",
     featured: true,
     github: "https://github.com/praveen-kumar-007",
-    live: "https://multimarg.vercel.app/",
+    live: "https://multimarg.com/",
   },
   {
     title: "Methane Detection in Coal Mining",
